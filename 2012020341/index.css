@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #0e0d0d;
+}
+
+/* Style the header element */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+main {
+    margin-top: 50px;
+}
+
+section#hero {
+
+    background-size: cover;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+section#hero h2 {
+    font-size: 48px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+section#hero p {
+    font-size: 24px;
+    color: #fff;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}

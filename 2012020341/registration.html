@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Login Form</title>
+	<link rel="stylesheet" href="from.css">
+	<!-- <script src="reg.js"></script> -->
+	<!-- <script src="registration.js"></script> -->
+	<!-- ?<script type="text/javascript" src="registration.js"></script> -->
+</head>
+
+<body>
+	<div class="reg">
+
+		<!-- <form id="form" onsubmit="return form()"> -->
+		<form id="form" onclick="return form()">
+
+			<h3>
+				<center>Registration Form</center>
+			</h3>
+
+			<label for="Name">Name:</label>
+			<input type="text" id="regname" placeholder="Enter your name">
+			<span id="sname"> </span>
+
+			<label for="email">Email:</label>
+			<input type="text" id="regemail" placeholder="Enter your email">
+			<span id="semail"> </span>
+
+			<label for="mobile">Mobile:</label>
+			<input type="text" id="regmobile" placeholder="Enter your phone number">
+			<span id="smobile"> </span>
+
+			<label for="password">Password:</label>
+			<input type="password" id="regpassword" placeholder="Enter your password">
+			<span id="spassword"> </span>
+
+			<label for="confirm password">Confrim Password:</label>
+			<input type="password" id="regconpassword" placeholder="Enter your password again">
+			<span id="sconfirmpassword"> </span>
+
+			<!-- <input type="submit" value="Registration" onclick="form()"> -->
+			<input type = "button" onclick = "form()" value = "Registration" >
+
+			<P>
+				<center> Alredey Registered? </a> <a href="login.html"> <b>Login</b> </a> </center>
+			</P>
+		</form>
+
+	</div>
+
+	<script>
+		function form() {
+	  var name = document.getElementById("regname").value;
+	  var email = document.getElementById("regemail").value;
+	  var mobile = document.getElementById("regmobile").value;
+	  var password = document.getElementById("regpassword").value;
+	  var conpassword = document.getElementById("regconpassword").value;
+	
+	//   var nameregex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
+	  var nameregex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/g;
+	  var emailregex = /\S+@\S+\.\S+/;
+	  var mobileregex = /^\d{10}$/;
+	  var passwordregex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+	
+	  if (!nameregex.test(name)) {
+		document.getElementById("sname").innerHTML =
+		  "Please enter a valid name";
+		return false;
+	  }
+	
+	  if (!emailregex.test(email)) {
+		document.getElementById("semail").innerHTML =
+		  "Please enter a valid email address";
+		return false;
+	  }
+	
+	  if (!mobileregex.test(mobile)) {
+		document.getElementById("smobile").innerHTML =
+		  "Please enter a valid 10 digit phone number";
+		return false;
+	  }
+	
+	  if (!passwordregex.test(password)) {
+		document.getElementById("spassword").innerHTML =
+		  "Password must contain at least 8 characters, including an uppercase letter, lowercase letter and a number";
+		return false;
+	  }
+	
+	  if (password != conpassword) {
+		document.getElementById("sconfirmpassword").innerHTML =
+		  "Passwords do not match";
+		return false;
+	  }
+	
+	  return true;
+	}
+	</script>
+
+</body>
+
+
+
+</html>
